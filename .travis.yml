@@ -8,3 +8,4 @@ deploy:
   app: limitless-hamlet-44082
   on:
     repo: Globuss/projet
+  run: "rake db:migrate"
