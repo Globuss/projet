@@ -5,44 +5,29 @@
 </div>
 <% end %>
 
-<p>
-  <strong>Nom:</strong>
-  <%= @town.nom %>
-</p>
-
-<p>
-  <strong>Latitute:</strong>
-  <%= @town.latitute %>
-</p>
-
-<p>
-  <strong>Longitude:</strong>
-  <%= @town.longitude %>
-</p>
-
-<p>
-  <strong>Youhou la météo du jour  :</strong>
-  <% if @weatherSummary %>
-     <%= @weatherSummary %>
-  <% else %>
-    Unavailable
-  <% end %>
-</p>
-
-<p>
-  <strong>OUUUUUUAIIIIS la température :</strong>
-  <% if @weatherTemperature %>
-    <%= '%.2f' % @weatherTemperature %> &deg;C
-  <% else %>
-    Unavailable
-  <% end %>
-</p>
-
-<% if @weatherIconName %>
-  <i class="wi wi-forecast-io-<%= @weatherIconName %>"></i>
-<% else %>
-  Unavailable
-<% end %>
+<div style="display:flex;padding:25px;">
+   <div style="padding:15px;">
+    <p style="font-size:10rem;line-height:11rem;">
+      <%= @town.nom %> 
+      
+    </p>
+  </div>
+  <div style="padding:15px;">
+     <p style="font-size:5rem;line-height:5.5rem;">
+      <% if @weatherTemperature %>
+        <%= '%.2f' % @weatherTemperature %> &deg;C
+      <% else %>
+        Unavailable
+      <% end %>
+    </p>
+    <p style="font-size:5rem;">
+      <% if @weatherIconName %>
+        <i class="wi wi-forecast-io-<%= @weatherIconName %>"></i>
+      <% end %>
+    </p>
+  </div>
+ 
+</div>
 
 <%= link_to 'Edit', edit_town_path(@town) %> |
 <%= link_to 'Back', towns_path %>
