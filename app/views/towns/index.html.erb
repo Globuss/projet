@@ -1,0 +1,32 @@
+<h1>Listing towns</h1>
+
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Latitute</th>
+      <th>Longitude</th>
+      <th>Show</th>
+      <th>Edit</th>
+      <th>Destroy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @towns.each do |town| %>
+    
+      <tr>
+        <td><%= town.nom %></td>
+        <td><%= town.latitute %></td>
+        <td><%= town.longitude %></td>
+        <td><%= link_to 'Show', town %></td>
+        <td><%= link_to 'Edit', edit_town_path(town) %></td>
+        <td><%= link_to 'Destroy', town, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    
+    <% end %>
+  </tbody>
+</table> 
+
+<br>
+
+<a style="color:#ffffff;" href="<%= new_town_path %>" class="btn btn-primary">New Town</a>

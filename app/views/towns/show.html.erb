@@ -1,0 +1,48 @@
+<% if notice %>
+<div style="color:#ffffff;" id="notice" class="alert alert-dismissible alert-success">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong>Well done!</strong> <%= notice %>
+</div>
+<% end %>
+
+<p>
+  <strong>Nom:</strong>
+  <%= @town.nom %>
+</p>
+
+<p>
+  <strong>Latitute:</strong>
+  <%= @town.latitute %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @town.longitude %>
+</p>
+
+<p>
+  <strong>Youhou la météo du jour  :</strong>
+  <% if @weatherSummary %>
+     <%= @weatherSummary %>
+  <% else %>
+    Unavailable
+  <% end %>
+</p>
+
+<p>
+  <strong>OUUUUUUAIIIIS la température :</strong>
+  <% if @weatherTemperature %>
+    <%= '%.2f' % @weatherTemperature %> &deg;C
+  <% else %>
+    Unavailable
+  <% end %>
+</p>
+
+<% if @weatherIconName %>
+  <i class="wi wi-forecast-io-<%= @weatherIconName %>"></i>
+<% else %>
+  Unavailable
+<% end %>
+
+<%= link_to 'Edit', edit_town_path(@town) %> |
+<%= link_to 'Back', towns_path %>

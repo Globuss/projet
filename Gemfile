@@ -39,3 +39,11 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# Nominatim
+gem 'nominatim', '~> 0.0.6'
+
+# forecast_io
+gem 'forecast_io', '~> 2.0', '>= 2.0.1'
+
+gem 'vcr', '~> 3.0', '>= 3.0.3', group: :test
+
