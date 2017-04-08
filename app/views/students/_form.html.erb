@@ -13,13 +13,38 @@
 
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :birthday %><br>
-    <%= f.date_select :birthday, start_year:1940 %>
+    <%= f.date_select :birthday, :class => "form-control", start_year:1940  %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
+
+
+<form class="form-horizontal">
+  <fieldset>
+    <legend>New Student</legend>
+    <div class="form-group">
+      <%= f.label :name, :class => 'col-lg-2 control-label' %>
+      <div class="col-lg-10">
+        <%= f.text_field :name, :class => "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :birthday,:class => 'col-lg-2 control-label' %>
+      <div class="col-lg-10">
+        <%= f.date_select :birthday, {class: "form-control"}, start_year:1940  %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <%= f.submit 'Create Student', :class => 'btn btn-primary' %>
+      </div>
+    </div>
+  </fieldset>
+</form>
+
 <% end %>
